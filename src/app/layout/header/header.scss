@@ -1,0 +1,28 @@
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  &__navigation {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 8px;
+  }
+
+  &__link {
+    margin: 4px 24px;
+
+    &--active {
+      background-color: #72cce8;
+    }
+  }
+}

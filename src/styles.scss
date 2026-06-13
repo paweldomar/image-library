@@ -5,6 +5,14 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
+:root {
+  @include mat.toolbar-overrides(
+    (
+      mobile-height: fit-content,
+    )
+  );
+}
+
 html {
   box-sizing: border-box;
   height: 100%;
@@ -44,7 +52,7 @@ body {
 
   height: 100%;
   min-height: 100%;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -59,12 +67,10 @@ body {
 // Normalize.scss settings
 // =============================================================================
 
-
 // Set to true if you want to add support for IE6 and IE7
 // Notice: setting to true might render some elements
 // slightly differently than when set to false
 $legacy_support_for_ie: false !default; // Used also in Compass
-
 
 // Set the default font family here so you don't have to override it later
 $normalized_font_family: sans-serif !default;
@@ -133,7 +139,8 @@ audio:not([controls]) {
 // Hide the `template` element in IE, Safari, and Firefox < 22.
 //
 
-[hidden], template {
+[hidden],
+template {
   display: none;
 }
 
@@ -304,7 +311,7 @@ pre {
 // Set consistent quote types.
 
 q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: '\201C' '\201D' '\2018' '\2019';
 }
 
 // 1. Addresses CSS quotes not supported in IE6/7
@@ -475,7 +482,8 @@ textarea {
 
 // Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
 
-button, input {
+button,
+input {
   line-height: normal;
 }
 
@@ -504,7 +512,7 @@ input[type="submit"] {
   -webkit-appearance: button; // 2
   cursor: pointer; // 3
   @if $legacy_support_for_ie {
-    *overflow: visible;  // 4
+    *overflow: visible; // 4
   }
 }
 
@@ -518,7 +526,8 @@ input[disabled] {
 // Removes inner padding and border in FF3+
 // www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
 
-button, input {
+button,
+input {
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
@@ -547,7 +556,7 @@ table {
 input {
   // 1. Addresses appearance set to searchfield in S5, Chrome
   // 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
-  &[type="search"] {
+  &[type='search'] {
     -webkit-appearance: textfield; // 1
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box; // 2
@@ -565,8 +574,8 @@ input {
   // 2. Remove excess padding in IE 8/9/10.
   // 3. Removes excess padding in IE7
   //    Known issue: excess padding remains in IE6
-  &[type="checkbox"],
-  &[type="radio"] {
+  &[type='checkbox'],
+  &[type='radio'] {
     box-sizing: border-box; // 1
     padding: 0; // 2
     @if $legacy_support_for_ie {
