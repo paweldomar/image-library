@@ -1,0 +1,37 @@
+.photo-card-button {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(16, 24, 40, 0.16);
+    opacity: 0.8;
+  }
+
+  &:active {
+    .photo-card {
+      transform: translateY(-2px);
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(63, 81, 181, 0.45);
+    outline-offset: 4px;
+  }
+}
+
+.photo-card {
+  overflow: hidden;
+  border-radius: 18px;
+  background: #ffffff;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+
+  &__image {
+    width: 100%;
+  }
+}
