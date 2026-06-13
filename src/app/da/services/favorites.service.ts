@@ -9,6 +9,7 @@ export class FavoritesService {
 
   readonly favorites = this._favorites.asReadonly();
   readonly favoritesCount = computed(() => this._favorites().length);
+  readonly isEmpty = computed(() => this._favorites().length === 0);
 
   constructor() {
     effect(() => this.saveFavoritesToStorage(this._favorites()));

@@ -1,1 +1,18 @@
-<p>favorites-page works!</p>
+<section class="app-page favorites-page">
+  <header class="app-page__header">
+    <h1 class="app-page__title">Favorites ({{ favoritesCount() }})</h1>
+  </header>
+
+  @if (isEmpty()) {
+    <div class="app-empty-state favorites-page__empty">
+      <div>
+        <h2>No favorite photos yet</h2>
+        <p>Go to the Photos page and click any photo to save it here.</p>
+
+        <a mat-button routerLink="/"> Browse photos </a>
+      </div>
+    </div>
+  } @else {
+    <app-photo-grid [photos]="favorites()" (photoClicked)="openPhoto($event)" />
+  }
+</section>
