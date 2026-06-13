@@ -16,7 +16,12 @@ describe('Loader', () => {
     await fixture.whenStable();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should initialize mat-spinner', () => {
+    const spinner = Array.from(fixture.nativeElement.querySelectorAll('mat-spinner'))[0] as HTMLAnchorElement;
+    const placeholder = Array.from(fixture.nativeElement.querySelectorAll('span') as HTMLAnchorElement[])[0].textContent?.trim();
+
+    expect(spinner.nodeName).toEqual('MAT-SPINNER');
+    expect(placeholder).toEqual('Loading...');
+
   });
 });
