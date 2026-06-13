@@ -1,6 +1,6 @@
-import {Service} from '@angular/core';
-import {Photo} from '../models/photo.model';
-import {delay, Observable, of} from 'rxjs';
+import { Service } from '@angular/core';
+import { Photo } from '../models/photo.model';
+import { delay, Observable, of } from 'rxjs';
 
 @Service()
 export class PhotoApiService {
@@ -13,15 +13,9 @@ export class PhotoApiService {
   private readonly _maxDelayMs = 300;
 
   getPhotos(count: number): Observable<Photo[]> {
-    const photos = Array.from(
-      { length: count },
-      () => this.createPhoto()
-    );
+    const photos = Array.from({ length: count }, () => this.createPhoto());
 
-    return of(photos)
-      .pipe(
-        delay(this.generateDelay())
-      );
+    return of(photos).pipe(delay(this.generateDelay()));
   }
 
   private createPhoto(): Photo {
@@ -35,7 +29,7 @@ export class PhotoApiService {
       height: this._thumbnailHeight,
       thumbnailUrl,
       fullSizeUrl,
-    }
+    };
   }
 
   private createRandomPhotoSeed(): string {

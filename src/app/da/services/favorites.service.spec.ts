@@ -11,7 +11,7 @@ describe('FavoritesService', () => {
     height: 300,
     thumbnailUrl: 'https://picsum.photos/seed/1/200/300',
     fullSizeUrl: 'https://picsum.photos/seed/1/1000/1400',
-  }
+  };
 
   const photo2: Photo = {
     id: '2',
@@ -19,7 +19,7 @@ describe('FavoritesService', () => {
     height: 300,
     thumbnailUrl: 'https://picsum.photos/seed/2/200/300',
     fullSizeUrl: 'https://picsum.photos/seed/2/1000/1400',
-  }
+  };
 
   beforeEach(() => {
     localStorage.clear();
@@ -32,7 +32,7 @@ describe('FavoritesService', () => {
   });
 
   it('should not have any favorites by default', () => {
-    expect(service.favorites().length).toEqual(0)
+    expect(service.favorites().length).toEqual(0);
   });
 
   it('should add photo to favorites', () => {
