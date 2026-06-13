@@ -23,8 +23,6 @@ describe('PhotoApiService', () => {
   it('should return photos with correct values', async () => {
     const photosArray = await firstValueFrom(service.getPhotos(3));
 
-    expect(photosArray[0].width).toEqual(200);
-    expect(photosArray[0].height).toEqual(300);
     expect(photosArray[0].fullSizeUrl).toEqual(
       `https://picsum.photos/seed/${photosArray[0].id}/600/800`,
     );

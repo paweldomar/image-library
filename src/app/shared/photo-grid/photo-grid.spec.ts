@@ -3,22 +3,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PhotoGrid } from './photo-grid';
 import { Photo } from '../../da/models/photo.model';
 
+import { photo1, photo2 } from '../util/mocks/photos.mock';
+
 describe('PhotoGrid', () => {
   let component: PhotoGrid;
   let fixture: ComponentFixture<PhotoGrid>;
 
-  const photos: Photo[] = [
-    {
-      id: '1',
-      thumbnailUrl: 'https://picsum.photos/seed/1/200/300',
-      fullSizeUrl: 'https://picsum.photos/seed/1/600/800',
-    },
-    {
-      id: '2',
-      thumbnailUrl: 'https://picsum.photos/seed/2/200/300',
-      fullSizeUrl: 'https://picsum.photos/seed/2/600/800',
-    },
-  ];
+  const photos: Photo[] = [photo1, photo2];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

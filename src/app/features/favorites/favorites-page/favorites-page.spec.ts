@@ -5,24 +5,14 @@ import { provideRouter, Router } from '@angular/router';
 import { signal } from '@angular/core';
 import { Photo } from '../../../da/models/photo.model';
 import { FavoritesService } from '../../../da/services/favorites.service';
+import { photo1, photo2 } from '../../../shared/util/mocks/photos.mock';
 
 describe('FavoritesPage', () => {
   let component: FavoritesPage;
   let fixture: ComponentFixture<FavoritesPage>;
   let router: Router;
 
-  const photos: Photo[] = [
-    {
-      id: 'photo-1',
-      thumbnailUrl: 'https://picsum.photos/seed/photo-1/200/300',
-      fullSizeUrl: 'https://picsum.photos/seed/photo-1/600/800',
-    },
-    {
-      id: 'photo-2',
-      thumbnailUrl: 'https://picsum.photos/seed/photo-2/200/300',
-      fullSizeUrl: 'https://picsum.photos/seed/photo-2/600/800',
-    },
-  ];
+  const photos: Photo[] = [photo1, photo2];
 
   const favorites = signal<Photo[]>([]);
 

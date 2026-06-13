@@ -7,6 +7,8 @@ import { PhotoApiService } from '../../../da/services/photo-api.service';
 import { FavoritesService } from '../../../da/services/favorites.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import { photo1, photo2, photo3 } from '../../../shared/util/mocks/photos.mock';
+
 class MockIntersectionObserver {
   static latestInstance: MockIntersectionObserver | undefined;
 
@@ -57,24 +59,6 @@ describe('PhotosPage', () => {
 
   let snackBarMock: {
     open: ReturnType<typeof vi.fn>;
-  };
-
-  const photo1: Photo = {
-    id: 'photo-1',
-    thumbnailUrl: 'https://picsum.photos/seed/photo-1/200/300',
-    fullSizeUrl: 'https://picsum.photos/seed/photo-1/600/800',
-  };
-
-  const photo2: Photo = {
-    id: 'photo-2',
-    thumbnailUrl: 'https://picsum.photos/seed/photo-2/200/300',
-    fullSizeUrl: 'https://picsum.photos/seed/photo-2/600/800',
-  };
-
-  const photo3: Photo = {
-    id: 'photo-3',
-    thumbnailUrl: 'https://picsum.photos/seed/photo-3/200/300',
-    fullSizeUrl: 'https://picsum.photos/seed/photo-3/600/800',
   };
 
   beforeEach(async () => {

@@ -2,19 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PhotoDetailsPage } from './photo-details-page';
 import { ActivatedRoute, convertToParamMap, provideRouter, Router } from '@angular/router';
-import { Photo } from '../../../da/models/photo.model';
 import { FavoritesService } from '../../../da/services/favorites.service';
+
+import { photo1 } from '../../../shared/util/mocks/photos.mock';
 
 describe('PhotoDetailsPage', () => {
   let component: PhotoDetailsPage;
   let fixture: ComponentFixture<PhotoDetailsPage>;
   let router: Router;
-
-  const photo: Photo = {
-    id: 'photo-1',
-    thumbnailUrl: 'https://picsum.photos/seed/photo-1/200/300',
-    fullSizeUrl: 'https://picsum.photos/seed/photo-1/600/800',
-  };
 
   let favoritesServiceMock: {
     getById: ReturnType<typeof vi.fn>;
@@ -54,9 +49,9 @@ describe('PhotoDetailsPage', () => {
   });
 
   it('should render photo when it exists', async () => {
-    await configureTestingModule(photo.id);
+    await configureTestingModule(photo1.id);
 
-    favoritesServiceMock.getById.mockReturnValue(photo);
+    favoritesServiceMock.getById.mockReturnValue(photo1);
 
     fixture = TestBed.createComponent(PhotoDetailsPage);
     fixture.detectChanges();
@@ -64,8 +59,8 @@ describe('PhotoDetailsPage', () => {
     const image = fixture.nativeElement.querySelector('img') as HTMLImageElement | null;
 
     expect(image).toBeTruthy();
-    expect(image?.getAttribute('src')).toBe(photo.fullSizeUrl);
-    expect(image?.getAttribute('alt')).toBe(`Favorite photo ${photo.id}`);
+    expect(image?.getAttribute('src')).toBe(photo1.fullSizeUrl);
+    expect(image?.getAttribute('alt')).toBe(`Favorite photo ${photo1.id}`);
   });
 
   it('should render not found state when photo does not exist', async () => {
@@ -83,9 +78,9 @@ describe('PhotoDetailsPage', () => {
   });
 
   it('should remove photo from favorites and navigate back to favorites', async () => {
-    await configureTestingModule(photo.id);
+    await configureTestingModule(photo1.id);
 
-    favoritesServiceMock.getById.mockReturnValue(photo);
+    favoritesServiceMock.getById.mockReturnValue(photo1);
 
     router = TestBed.inject(Router);
     const navigateSpy = vi.spyOn(router, 'navigate');
@@ -96,7 +91,7 @@ describe('PhotoDetailsPage', () => {
 
     component.removeFromFavorites();
 
-    expect(favoritesServiceMock.remove).toHaveBeenCalledWith(photo);
+    expect(favoritesServiceMock.remove).toHaveBeenCalledWith(photo1);
     expect(navigateSpy).toHaveBeenCalledWith(['/favorites']);
   });
 });

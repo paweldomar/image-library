@@ -2,15 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PhotoCard } from './photo-card';
 
+import { photo1 } from '../util/mocks/photos.mock';
+
 describe('PhotoCard', () => {
   let component: PhotoCard;
   let fixture: ComponentFixture<PhotoCard>;
-
-  const photo1 = {
-    id: '1',
-    thumbnailUrl: 'https://picsum.photos/id/1/200/300',
-    fullSizeUrl: 'https://picsum.photos/id/1/600/800',
-  };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

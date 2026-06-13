@@ -1,21 +1,10 @@
 import { FavoritesService } from './favorites.service';
-import { Photo } from '../models/photo.model';
 import { TestBed } from '@angular/core/testing';
+
+import { photo1, photo2 } from '../../shared/util/mocks/photos.mock';
 
 describe('FavoritesService', () => {
   let service: FavoritesService;
-
-  const photo1: Photo = {
-    id: '1',
-    thumbnailUrl: 'https://picsum.photos/seed/1/200/300',
-    fullSizeUrl: 'https://picsum.photos/seed/1/600/800',
-  };
-
-  const photo2: Photo = {
-    id: '2',
-    thumbnailUrl: 'https://picsum.photos/seed/2/200/300',
-    fullSizeUrl: 'https://picsum.photos/seed/2/600/800',
-  };
 
   beforeEach(() => {
     localStorage.clear();
