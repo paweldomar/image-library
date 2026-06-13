@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PhotoGrid } from './photo-grid';
-import {Photo} from '../../da/models/photo.model';
+import { Photo } from '../../da/models/photo.model';
 
 describe('PhotoGrid', () => {
   let component: PhotoGrid;
