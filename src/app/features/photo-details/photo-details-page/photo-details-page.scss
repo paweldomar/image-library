@@ -1,0 +1,48 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-details-page {
+  width: 100%;
+
+  &__toolbar {
+    position: sticky;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    width: 100%;
+  }
+
+  &__figure {
+    display: grid;
+    margin: 0;
+    padding: 24px 40px;
+    place-items: center;
+  }
+
+  &__image {
+    max-width: 100%;
+    border-radius: 24px;
+    object-fit: contain;
+    box-shadow: 0 24px 56px rgba(16, 24, 40, 0.24);
+  }
+
+  &__not-found {
+    h1 {
+      margin: 0;
+      color: #101828;
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 8px 0 20px;
+    }
+  }
+}

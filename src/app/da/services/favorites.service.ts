@@ -39,6 +39,10 @@ export class FavoritesService {
     return this._favorites().some((photo) => photo.id === photoId);
   }
 
+  getById(photoId: string): Photo | undefined {
+    return this._favorites().find((photo) => photo.id === photoId);
+  }
+
   private loadFavoritesFromStorage(): Photo[] {
     const favorites = localStorage.getItem(FAVORITES_KEY);
 

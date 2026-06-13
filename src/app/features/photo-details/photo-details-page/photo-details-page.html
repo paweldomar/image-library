@@ -1,1 +1,30 @@
-<p>photo-details-page works!</p>
+<section class="photo-details-page">
+  @if (photo(); as selectedPhoto) {
+    <figure class="photo-details-page__figure">
+      <img
+        class="photo-details-page__image"
+        (load)="onLoaded()"
+        [src]="selectedPhoto.fullSizeUrl"
+        [alt]="'Favorite photo ' + selectedPhoto.id"
+      />
+      @if (isLoading()) {
+        <app-loader />
+      }
+    </figure>
+    <div class="photo-details-page__toolbar">
+      <button mat-flat-button color="warn" type="button" (click)="removeFromFavorites()">
+        <mat-icon aria-hidden="true">delete</mat-icon>
+        Remove from favorites
+      </button>
+    </div>
+  } @else {
+    <div class="app-page">
+      <div class="app-empty-state photo-details-page__not-found">
+        <div>
+          <h1>Photo not found</h1>
+          <p>This photo is not available in your favorites library.</p>
+        </div>
+      </div>
+    </div>
+  }
+</section>

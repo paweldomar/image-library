@@ -26,7 +26,7 @@ describe('PhotoApiService', () => {
     expect(photosArray[0].width).toEqual(200);
     expect(photosArray[0].height).toEqual(300);
     expect(photosArray[0].fullSizeUrl).toEqual(
-      `https://picsum.photos/seed/${photosArray[0].id}/1000/1400`,
+      `https://picsum.photos/seed/${photosArray[0].id}/600/800`,
     );
     expect(photosArray[0].thumbnailUrl).toEqual(
       `https://picsum.photos/seed/${photosArray[0].id}/200/300`,

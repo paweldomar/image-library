@@ -7,8 +7,8 @@ export class PhotoApiService {
   private readonly _photosUrl = 'https://picsum.photos/';
   private readonly _thumbnailWidth = 200;
   private readonly _thumbnailHeight = 300;
-  private readonly _fullSizeWidth = 1000;
-  private readonly _fullSizeHeight = 1400;
+  private readonly _fullSizeWidth = 600;
+  private readonly _fullSizeHeight = 800;
   private readonly _minDelayMs = 200;
   private readonly _maxDelayMs = 300;
 

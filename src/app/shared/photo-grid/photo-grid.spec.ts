@@ -11,14 +11,14 @@ describe('PhotoGrid', () => {
     {
       id: '1',
       thumbnailUrl: 'https://picsum.photos/seed/1/200/300',
-      fullSizeUrl: 'https://picsum.photos/seed/1/1000/1400',
+      fullSizeUrl: 'https://picsum.photos/seed/1/600/800',
       width: 200,
       height: 300,
     },
     {
       id: '2',
       thumbnailUrl: 'https://picsum.photos/seed/2/200/300',
-      fullSizeUrl: 'https://picsum.photos/seed/2/1000/1400',
+      fullSizeUrl: 'https://picsum.photos/seed/2/600/800',
       width: 200,
       height: 300,
     },

@@ -10,7 +10,7 @@ describe('FavoritesService', () => {
     width: 200,
     height: 300,
     thumbnailUrl: 'https://picsum.photos/seed/1/200/300',
-    fullSizeUrl: 'https://picsum.photos/seed/1/1000/1400',
+    fullSizeUrl: 'https://picsum.photos/seed/1/600/800',
   };
 
   const photo2: Photo = {
@@ -18,7 +18,7 @@ describe('FavoritesService', () => {
     width: 200,
     height: 300,
     thumbnailUrl: 'https://picsum.photos/seed/2/200/300',
-    fullSizeUrl: 'https://picsum.photos/seed/2/1000/1400',
+    fullSizeUrl: 'https://picsum.photos/seed/2/600/800',
   };
 
   beforeEach(() => {
@@ -82,5 +82,14 @@ describe('FavoritesService', () => {
     const service = TestBed.inject(FavoritesService);
 
     expect(service.favorites().length).toEqual(2);
+  });
+
+  it('should return photo', () => {
+    service.add(photo1);
+    service.add(photo2);
+
+    const photo = service.getById(photo1.id);
+
+    expect(photo).toEqual(photo1);
   });
 });

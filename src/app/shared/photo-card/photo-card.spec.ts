@@ -11,7 +11,7 @@ describe('PhotoCard', () => {
     width: 200,
     height: 300,
     thumbnailUrl: 'https://picsum.photos/id/1/200/300',
-    fullSizeUrl: 'https://picsum.photos/id/1/1000/1400',
+    fullSizeUrl: 'https://picsum.photos/id/1/600/800',
   };
 
   beforeEach(async () => {
