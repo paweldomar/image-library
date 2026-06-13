@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { PhotoApiService } from './photo-api.service';
-import { Photo } from '../models/photo.model';
 import {firstValueFrom} from 'rxjs';
 
 describe('PhotoApiService', () => {
