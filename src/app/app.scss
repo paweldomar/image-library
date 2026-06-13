@@ -3,9 +3,28 @@
   flex-direction: column;
   min-height: 100vh;
   padding: 8px;
+  align-items: center;
   border-radius: 8px;
+  max-width: 1600px;
+  width: 100%;
+  justify-self: center;
+  align-self: center
 }
 
 app-header {
   position: sticky;
+  width: 100%;
+}
+
+.app-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+
+app-loader {
+  margin: 16px 0;
 }

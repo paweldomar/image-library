@@ -1,12 +1,10 @@
-import {Component, input, output} from '@angular/core';
-import {Photo} from '../../da/models/photo.model';
-import {MatCard} from '@angular/material/card';
+import { Component, input, output } from '@angular/core';
+import { Photo } from '../../da/models/photo.model';
+import { MatCard } from '@angular/material/card';
 
 @Component({
   selector: 'app-photo-card',
-  imports: [
-    MatCard
-  ],
+  imports: [MatCard],
   templateUrl: './photo-card.html',
   styleUrl: './photo-card.scss',
 })
