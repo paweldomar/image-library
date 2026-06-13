@@ -1,1 +1,24 @@
-<p>photos-page works!</p>
+<section class="app-page photos-page">
+  <header class="app-page__header">
+    <h1 class="app-page__title">Photos</h1>
+  </header>
+
+  @if (error()) {
+    <div class="app-error-state photos-page__error" role="alert">
+      <p>{{ error() }}</p>
+
+      <button mat-button type="button" (click)="loadMore()">Try again</button>
+    </div>
+  }
+
+  @if (photos().length > 0) {
+    <app-photo-grid
+      [photos]="photos()"
+      (photoClicked)="addToFavorites($event)"
+    />
+  }
+
+  @if (isLoading()) {
+    <app-loader />
+  }
+</section>

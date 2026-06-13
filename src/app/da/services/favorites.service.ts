@@ -14,16 +14,20 @@ export class FavoritesService {
     effect(() => this.saveFavoritesToStorage(this._favorites()));
   }
 
-  add(photo: Photo): void {
+  add(photo: Photo): boolean {
+    let added = false;
     this._favorites.update((favorites) => {
       const alreadyInFavorites = this.isFavorite(photo.id);
 
       if (alreadyInFavorites) {
         return favorites;
       }
+      added = true;
 
       return [...favorites, photo];
     });
+
+    return added;
   }
 
   remove(photo: Photo): void {
