@@ -12,13 +12,12 @@
   }
 
   @if (photos().length > 0) {
-    <app-photo-grid
-      [photos]="photos()"
-      (photoClicked)="addToFavorites($event)"
-    />
+    <app-photo-grid [photos]="photos()" (photoClicked)="addToFavorites($event)" />
   }
 
   @if (isLoading()) {
     <app-loader />
   }
+
+  <div #scrollAnchor class="photos-page__scroll-anchor" aria-hidden="true"></div>
 </section>
