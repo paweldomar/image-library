@@ -7,16 +7,12 @@ describe('FavoritesService', () => {
 
   const photo1: Photo = {
     id: '1',
-    width: 200,
-    height: 300,
     thumbnailUrl: 'https://picsum.photos/seed/1/200/300',
     fullSizeUrl: 'https://picsum.photos/seed/1/600/800',
   };
 
   const photo2: Photo = {
     id: '2',
-    width: 200,
-    height: 300,
     thumbnailUrl: 'https://picsum.photos/seed/2/200/300',
     fullSizeUrl: 'https://picsum.photos/seed/2/600/800',
   };

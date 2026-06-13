@@ -14,8 +14,6 @@ describe('PhotoDetailsPage', () => {
     id: 'photo-1',
     thumbnailUrl: 'https://picsum.photos/seed/photo-1/200/300',
     fullSizeUrl: 'https://picsum.photos/seed/photo-1/600/800',
-    width: 200,
-    height: 300,
   };
 
   let favoritesServiceMock: {

@@ -8,8 +8,6 @@ describe('PhotoCard', () => {
 
   const photo1 = {
     id: '1',
-    width: 200,
-    height: 300,
     thumbnailUrl: 'https://picsum.photos/id/1/200/300',
     fullSizeUrl: 'https://picsum.photos/id/1/600/800',
   };

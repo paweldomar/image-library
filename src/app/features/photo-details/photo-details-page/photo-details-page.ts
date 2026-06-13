@@ -1,9 +1,9 @@
-import {Component, computed, inject, signal} from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FavoritesService } from '../../../da/services/favorites.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {Loader} from '../../../shared/loader/loader';
+import { Loader } from '../../../shared/loader/loader';
 
 @Component({
   selector: 'app-photo-details-page',

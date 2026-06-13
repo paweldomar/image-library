@@ -25,8 +25,6 @@ export class PhotoApiService {
 
     return {
       id,
-      width: this._thumbnailWidth,
-      height: this._thumbnailHeight,
       thumbnailUrl,
       fullSizeUrl,
     };
